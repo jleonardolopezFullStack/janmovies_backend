@@ -14,7 +14,7 @@ const { generalResult } = require("../middlewears/validationResult");
 
 const authRouter = Router();
 
-authRouter.get("/", [tokenVerification, generalResult], userGet);
+authRouter.get("/", [, /* tokenVerification */ generalResult], userGet);
 
 authRouter.get(
   "/:id",
