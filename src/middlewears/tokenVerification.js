@@ -9,7 +9,7 @@ const tokenVerification = async (req = request, res = response, next) => {
     const { token } = req.params;
     //console.log(token);
     if (!token) {
-      return res.json({ msg: "Token have to be fill" });
+      return res.json({ msg: "Token have to be fillllll" });
     }
     const { user } = jwt.verify(token, secret);
 
