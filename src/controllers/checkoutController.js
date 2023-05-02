@@ -1,9 +1,10 @@
 require("dotenv").config();
 const stripe = require("stripe")(process.env.KEY);
+const port = process.env.PORT || 3001;
 
 const checkoutGet = async (req, res) => {
   const items = req.body.items;
-
+  console.log("probando si entramos aqui");
   let lineItems = [];
   items.forEach((item) => {
     lineItems.push({ price: item.idStripe, quantity: item.quantity });

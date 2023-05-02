@@ -35,6 +35,10 @@ app.use(links.pack, packRouter);
 app.use(links.email, emailRouter);
 app.use(links.checkout, checkoutRouter);
 
+app.use("*", (req, res, next) => {
+  res.status(404).json({ msg: "Page not found Daaaa" });
+});
+
 app.listen(port, () => {
   console.log(`Server is runing in port: ${port}`);
 });
