@@ -9,9 +9,9 @@ const { categoryRouter } = require("./src/routes/categoryRoutes");
 const { packRouter } = require("./src/routes/packRoutes");
 const { emailRouter } = require("./src/routes/emailRoutes");
 const { checkoutRouter } = require("./src/routes/checkoutRoutes");
-
+const port = process.env.PORT || 3001;
 const app = express();
-const port = process.env.PORT;
+
 const links = {
   authentication: "/auth",
   login: "/login",
@@ -23,8 +23,10 @@ const links = {
 };
 
 app.use(cors());
-app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(express.static("public"));
+app.use(express.json());
+
 app.use(links.authentication, authRouter);
 app.use(links.login, loginRouter);
 app.use(links.product, productRoter);
