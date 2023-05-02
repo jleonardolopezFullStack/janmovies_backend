@@ -22,7 +22,7 @@ const links = {
   checkout: "/checkout",
 };
 
-app.use(cors());
+app.use(cors({ origin: "https://singular-quokka-21cf35.netlify.app" }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(express.json());
