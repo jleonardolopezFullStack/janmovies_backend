@@ -23,14 +23,14 @@ const links = {
 };
 
 app.use(
-  cors({
+  cors(/* {
     origin: [
       "https://singular-quokka-21cf35.netlify.app",
       "http://localhost:3000 ",
     ],
     methods: ["GET", "POST"],
     credentials: true,
-  })
+  } */)
 );
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
