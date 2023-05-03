@@ -12,8 +12,8 @@ const checkoutGet = async (req, res) => {
   const session = await stripe.checkout.sessions.create({
     line_items: lineItems,
     mode: "payment",
-    success_url: "http://localhost:3000/success",
-    cancel_url: "http://localhost:3000/cancel",
+    success_url: "https://janmovies.netlify.app/success",
+    cancel_url: "https://janmovies.netlify.app/cancel",
   });
 
   res.json({ msg: lineItems, url: session.url });
